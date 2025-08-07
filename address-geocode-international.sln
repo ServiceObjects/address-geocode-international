@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36202.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "address-geocode-international-dot-net", "address-geocode-international-dot-net\address-geocode-international-dot-net.csproj", "{B043CDA9-AB8F-441E-801D-477782A227C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "address-geocode-international-dot-net-examples", "address-geocode-international-dot-net-examples\address-geocode-international-dot-net-examples.csproj", "{0595226A-A72B-4601-A39D-023236E8AD3D}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "address-geocode-international-python", "address-geocode-international-python\address-geocode-international-python.pyproj", "{A8CA1001-2C5D-4A47-B818-939FEC82B1DF}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "address-geocode-international-python-examples", "address-geocode-international-python-examples\address-geocode-international-python-examples.pyproj", "{BD13764C-16E3-412C-BF9B-78E7A8AB6780}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B043CDA9-AB8F-441E-801D-477782A227C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B043CDA9-AB8F-441E-801D-477782A227C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B043CDA9-AB8F-441E-801D-477782A227C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B043CDA9-AB8F-441E-801D-477782A227C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0595226A-A72B-4601-A39D-023236E8AD3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0595226A-A72B-4601-A39D-023236E8AD3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0595226A-A72B-4601-A39D-023236E8AD3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0595226A-A72B-4601-A39D-023236E8AD3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8CA1001-2C5D-4A47-B818-939FEC82B1DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8CA1001-2C5D-4A47-B818-939FEC82B1DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD13764C-16E3-412C-BF9B-78E7A8AB6780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD13764C-16E3-412C-BF9B-78E7A8AB6780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3153DE02-E87F-4919-9A72-2863AB60C516}
+	EndGlobalSection
+EndGlobal

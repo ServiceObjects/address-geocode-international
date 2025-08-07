@@ -1,0 +1,530 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: DOTS Address Geocode International
+  description: 'DOTS Address Geocode – International is a publicly available XML and JSON web service'
+host: trial.serviceobjects.com
+basePath: /AGI/api.svc
+paths:
+  /xml/PlaceSearch:
+    get:
+      tags:
+        - "Operations"
+      produces:
+        - application/xml
+      description:
+      parameters:
+      - name: SingleLine
+        in: query
+        description: The full address on one line.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: Address1
+        in: query
+        description: Address Line 1 of the International Address.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: Address2
+        in: query
+        description: Address Line 2 of the International Address.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: Address3
+        in: query
+        description: Address Line 3 of the International Address.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: Address4
+        in: query
+        description: Address Line 4 of the International Address.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: Address5
+        in: query
+        description: Address Line 5 of the International Address.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: Locality
+        in: query
+        description: The name of the distinct population cluster, such as a City, Town or other type of Municipality.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: AdministrativeArea
+        in: query
+        description: The name of the administrative division. Commonly the primary division of a country, such as a State, Region, Province, County, Territory or Prefecture.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: PostalCode
+        in: query
+        description: The postal code of the international address. It is recommended that the postal code be formatted to contain a strong resemblance to the proper country specific format, and that you do not precede the postal code with a country or region code. For example, use '09170' instead of 'FR-9170'.
+        default: ''
+        type: string  
+        allowEmptyValue: true
+      - name: Country
+        in: query
+        description: The country.
+        default: ''
+        type: string  
+        allowEmptyValue: true
+      - name: Boundaries
+        in: query
+        description: 
+        default: ''
+        type: string  
+        allowEmptyValue: true
+      - name: MaxResults
+        in: query
+        description: 
+        default: ''
+        type: string  
+        allowEmptyValue: true
+      - name: SearchType
+        in: query
+        description: 
+        default: ''
+        type: string  
+        allowEmptyValue: true
+      - name: Extras
+        in: query
+        description: 
+        default: ''
+        type: string  
+        allowEmptyValue: true		
+      - name: LicenseKey
+        in: query
+        description: License Key for web service.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/SearchResponse'
+  /json/PlaceSearch:
+    get:
+      tags:
+        - "Operations"
+      produces:
+        - application/json
+      description: 
+      parameters:
+      - name: SingleLine
+        in: query
+        description: The full address on one line.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: Address1
+        in: query
+        description: Address Line 1 of the International Address.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: Address2
+        in: query
+        description: Address Line 2 of the International Address.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: Address3
+        in: query
+        description: Address Line 3 of the International Address.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: Address4
+        in: query
+        description: Address Line 4 of the International Address.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: Address5
+        in: query
+        description: Address Line 5 of the International Address.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: Locality
+        in: query
+        description: The name of the distinct population cluster, such as a City, Town or other type of Municipality.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: AdministrativeArea
+        in: query
+        description: The name of the administrative division. Commonly the primary division of a country, such as a State, Region, Province, County, Territory or Prefecture.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: PostalCode
+        in: query
+        description: The postal code of the international address. It is recommended that the postal code be formatted to contain a strong resemblance to the proper country specific format, and that you do not precede the postal code with a country or region code. For example, use '09170' instead of 'FR-9170'.
+        default: ''
+        type: string  
+        allowEmptyValue: true
+      - name: Country
+        in: query
+        description: The country.
+        default: ''
+        type: string  
+        allowEmptyValue: true
+      - name: Boundaries
+        in: query
+        description: 
+        default: ''
+        type: string  
+        allowEmptyValue: true
+      - name: MaxResults
+        in: query
+        description: 
+        default: ''
+        type: string  
+        allowEmptyValue: true
+      - name: SearchType
+        in: query
+        description: 
+        default: ''
+        type: string  
+        allowEmptyValue: true
+      - name: Extras
+        in: query
+        description: 
+        default: ''
+        type: string  
+        allowEmptyValue: true		
+      - name: LicenseKey
+        in: query
+        description: License Key for web service.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/SearchResponse'
+  /xml/ReverseSearch:
+    get:
+      tags:
+        - "Operations"
+      produces:
+        - application/xml
+      description:
+      parameters:
+      - name: Latitude
+        in: query
+        description: The latitude of the location.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: Longitude
+        in: query
+        description: The longitude of the location.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: SearchRadius
+        in: query
+        description: Defaults to 1. Maximum value of 50.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: Country
+        in: query
+        description: The preferred name of the country or the ISO.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: MaxResults
+        in: query
+        description: Acceptable values range from 1 to 10. 
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: SearchType
+        in: query
+        description: The name of the type of search you want to perform.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: LicenseKey
+        in: query
+        description: License Key for web service.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/SearchResponse'
+  /json/ReverseSearch:
+    get:
+      tags:
+        - "Operations"
+      produces:
+        - application/json
+      description: 
+      parameters:
+      - name: Latitude
+        in: query
+        description: The latitude of the location.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: Longitude
+        in: query
+        description: The longitude of the location.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: SearchRadius
+        in: query
+        description: Defaults to 1. Maximum value of 50.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: Country
+        in: query
+        description: The preferred name of the country or the ISO.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: MaxResults
+        in: query
+        description: Acceptable values range from 1 to 10. 
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: SearchType
+        in: query
+        description: The name of the type of search you want to perform.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      - name: LicenseKey
+        in: query
+        description: License Key for web service.
+        default: ''
+        type: string
+        allowEmptyValue: true
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/SearchResponse'
+definitions:
+  SearchResponse:
+    xml:
+      name: SearchResponse
+      namespace: http://www.serviceobjects.com
+    properties:
+      SearchInfo:
+        $ref: '#/definitions/SearchInfo'
+      Locations:
+        $ref: '#/definitions/LocationInfo'
+      Error:
+        $ref: '#/definitions/Error'
+  SearchInfo:
+    xml:
+      name: SearchInfo
+    properties:
+      Status:
+        type: string
+        xml:
+          name: Status
+      NumberOfLocations:
+        type: string
+        xml:
+          name: NumberOfLocations
+      Notes:
+        type: string
+        xml:
+          name: Notes
+      NotesDesc:
+        type: string
+        xml:
+          name: NotesDesc
+      Warnings:
+        type: string
+        xml:
+          name: Warnings
+      WarningDesc:
+        type: string
+        xml:
+          name: WarningDesc
+  LocationInfo:
+    xml:
+      name: LocationInfo
+    properties:
+      PercisionLevel:
+        type: string
+        xml:
+          name: PercisionLevel
+      Type:
+        type: string
+        xml:
+          name: Type
+      Latitude:
+        type: string
+        xml:
+          name: Latitude
+      Longitude:
+        type: string
+        xml:
+          name: Longitude
+      AddressComponents:
+        $ref: '#/definitions/AddressComponents'
+  AddressComponents:
+    xml:
+      name: AddressComponents
+    properties:
+      PremiseNumber:
+        type: string
+        xml:
+          name: PremiseNumber
+      Thoroughfare:
+        type: string
+        xml:
+          name: Thoroughfare
+      DoubleDependentLocality:
+        type: string
+        xml:
+          name: DoubleDependentLocality
+      DependentLocality:
+        type: string
+        xml:
+          name: DependentLocality
+      Locality:
+        type: string
+        xml:
+          name: Locality
+      AdministrativeArea1:
+        type: string
+        xml:
+          name: AdministrativeArea1
+      AdministrativeArea1Abbreviation:
+        type: string
+        xml:
+          name: AdministrativeArea1Abbreviation
+      AdministrativeArea2:
+        type: string
+        xml:
+          name: AdministrativeArea2
+      AdministrativeArea2Abbreviation:
+        type: string
+        xml:
+          name: AdministrativeArea2Abbreviation
+      AdministrativeArea3:
+        type: string
+        xml:
+          name: AdministrativeArea3
+      AdministrativeArea3Abbreviation:
+        type: string
+        xml:
+          name: AdministrativeArea3Abbreviation
+      AdministrativeArea4:
+        type: string
+        xml:
+          name: AdministrativeArea4
+      AdministrativeArea4Abbreviation:
+        type: string
+        xml:
+          name: AdministrativeArea4Abbreviation
+      PostalCode:
+        type: string
+        xml:
+          name: PostalCode
+      Country:
+        type: string
+        xml:
+          name: Country
+      CountryISO2:
+        type: string
+        xml:
+          name: CountryISO2
+      CountryISO3:
+        type: string
+        xml:
+          name: CountryISO3
+      GoogleMapsURL:
+        type: string
+        xml:
+          name: GoogleMapsURL
+      PlaceName:
+        type: string
+        xml:
+          name: PlaceName
+      IsUnincorporated:
+        type: string
+        xml:
+          name: IsUnincorporated
+      StateFIPS:
+        type: string
+        xml:
+          name: StateFIPS
+      CountyFIPS:
+        type: string
+        xml:
+          name: CountyFIPS
+      CensusTract:
+        type: string
+        xml:
+          name: CensusTract
+      CensusBlock:
+        type: string
+        xml:
+          name: CensusBlock
+      CensusGeoID:
+        type: string
+        xml:
+          name: CensusGeoID
+      ClassFP:
+        type: string
+        xml:
+          name: ClassFP
+      CongressCode:
+        type: string
+        xml:
+          name: CongressCode
+      SLDUST:
+        type: string
+        xml:
+          name: SLDUST
+      SLDLST:
+        type: string
+        xml:
+          name: SLDLST
+      TimeZone:
+        type: string
+        xml:
+          name: TimeZone
+  Error:
+    xml:
+      name: Error
+    properties:
+      Type:
+        type: string
+        xml:
+          name: Type
+      TypeCode:
+        type: string
+        xml:
+          name: TypeCode
+      Desc:
+        type: string
+        xml:
+          name: Desc
+      DescCode:
+        type: string
+        xml:
+          name: DescCode
