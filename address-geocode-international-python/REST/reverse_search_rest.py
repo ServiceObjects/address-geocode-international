@@ -85,7 +85,7 @@ def reverse_search(latitude: float,
                     raise RuntimeError(f"AGI ReverseSearch error: {data['Error']}")
             else:
                 # Trial mode should not fallback; error is terminal
-                raise RuntimeError(f"AGI trial error: {data['Error']}")
+                return data
         
         # Success: return parsed JSON data
         return data

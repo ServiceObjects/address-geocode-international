@@ -32,7 +32,7 @@ namespace address_geocode_international_dot_net.REST
             {
                 var fallbackUrl = BuildUrl(input, BackupBaseUrl);
                 AGIPlaceSearchResponse fallbackResponse = Helper.HttpGet<AGIPlaceSearchResponse>(fallbackUrl, input.TimeoutSeconds);
-                return IsValid(fallbackResponse) ? fallbackResponse : response;
+                return fallbackResponse;
             }
 
             return response;
@@ -56,7 +56,7 @@ namespace address_geocode_international_dot_net.REST
             {
                 var fallbackUrl = BuildUrl(input, BackupBaseUrl);
                 AGIPlaceSearchResponse fallbackResponse = await Helper.HttpGetAsync<AGIPlaceSearchResponse>(fallbackUrl, input.TimeoutSeconds).ConfigureAwait(false);
-                return IsValid(fallbackResponse) ? fallbackResponse : response;
+                return fallbackResponse;
             }
 
             return response;

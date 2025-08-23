@@ -113,7 +113,7 @@ def place_search(single_line: str,
                     raise RuntimeError(f"AGI PlaceSearch backup error: {data['Error']}")
             else:
                 # Trial mode should not fallback; error is terminal
-                raise RuntimeError(f"AGI trial error: {data['Error']}")
+                return data
 
         # Success: return parsed JSON data
         return data
@@ -126,9 +126,6 @@ def place_search(single_line: str,
                 response = requests.get(BACKUP_URL, params=params, timeout=10)
                 response.raise_for_status()
                 data = response.json()
-                if "Error" in data:
-                    # Both primary and backup failed; escalate
-                    raise RuntimeError(f"AGI backup error: {data['Error']}")
                 return data
             except Exception as fallback_exc:
                 raise RuntimeError("AGI PlaceSearch unreachable on both endpoints") from fallback_exc
