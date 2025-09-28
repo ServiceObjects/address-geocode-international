@@ -6,7 +6,7 @@ sys.path.insert(0, os.path.abspath("../address-geocode-international-python/REST
 
 from place_search_rest import place_search
 
-def place_search_rest_sdk_go(license: str, is_live_key: bool):
+def place_search_rest_sdk_go(license_key, is_live):
     print("\n" + "-" * 54)
     print("Address Geocode International - PlaceSearch - REST SDK")
     print("-" * 54)
@@ -26,8 +26,8 @@ def place_search_rest_sdk_go(license: str, is_live_key: bool):
     print(f"Max Results        : ")
     print(f"Search Type        : ")
     print(f"Extras             : ")
-    print(f"Is Live            : {is_live_key}")
-    print(f"License Key        : {license}")
+    print(f"Is Live            : {is_live}")
+    print(f"License Key        : {license_key}")
 
     try:
         response = place_search(
@@ -45,8 +45,8 @@ def place_search_rest_sdk_go(license: str, is_live_key: bool):
             max_results="",
             search_type="",
             extras="",
-            license_key=license,
-            is_live=is_live_key
+            license_key=license_key,
+            is_live=is_live
         )
 
         if not response.get('Error'):

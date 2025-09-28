@@ -19,46 +19,61 @@ Find coordinates and information for a place, address, or POI (Point of Interest
 ```
 # 1. Input.
 #
-# Required fields:
-#              license
-#              is_live_key
-#
-# Optional fields:
-#              single_line
-#              address1 
-#              address2
-#              address3
-#              address4 
-#              address5
-#              locality 
-#              administrative_area
-#              postal_code
-#              country
-#              boundaries
-#              max_esults
-#              search_type
-#              extras
+# Fields:
+#     single_line
+#     address1 
+#     address2
+#     address3
+#     address4 
+#     address5
+#     locality 
+#     administrative_area
+#     postal_code
+#     country
+#     boundaries
+#     max_esults
+#     search_type
+#     extras
+#     license_key
+#     is_live
 
 from place_search_soap import PlaceSearch
 from helper import response_to_dict
 
+single_line = "17 Battery Place, New York, NY 10004"
+address1 = ""
+address2 = ""
+address3 = ""
+address4 = ""
+address5 = ""
+locality = ""
+administrative_area = ""
+postal_code = ""
+country = "USA"
+boundaries = ""
+max_results = ""
+search_type = ""
+extras = ""
+is_live = True
+license_key = "YOUR LICENSE KEY"
+
 # 2. Call the method.
-service = PlaceSearch(license, True, timeout_ms=10000)
+service = PlaceSearch(license_key, is_live, timeout_ms=10000)
 response = service.place_search(
-    single_line="17 Battery Place, New York, NY 10004",
-    address1="",
-    address2="",
-    address3="",
-    address4="",
-    address5="",
-    locality="",
-    administrative_area="",
-    postal_code="",
-    country="USA",
-    boundaries="",
-    max_results="",
-    search_type="",
-    extras=""
+    single_line,
+    address1,
+    address2,
+    address3,
+    address4,
+    address5,
+    locality,
+    administrative_area,
+    postal_code,
+    country,
+    boundaries,
+    max_results,
+    search_type,
+    extras
 )
 
 # 3. Inspect results.
@@ -135,30 +150,37 @@ Retrieve address/location information for a given latitude and longitude anywher
 ```
 # 1. Input.
 #
-# Required fields:
-#               license
-#               is_live_key
-#
-# Optional fields:
-#               latitude     
-#               longitude    
-#               search_radius
-#               country      
-#               max_results   
-#               search_type  
+# Fields:
+#    latitude     
+#    longitude    
+#    search_radius
+#    country      
+#    max_results   
+#    search_type  
+#    license_key
+#    is_live  
 
 from reverse_search_soap import ReverseSearch
 from helper import response_to_dict
 
+latitude = "40.6892"
+longitude = "-74.0445"
+search_radius = "5"
+country = "USA"
+max_results = "2"
+search_type = "All"
+is_live = True
+license_key = "YOUR LICENSE KEY"
+
 # 2. Call the method.
-service = ReverseSearch(license, True, timeout_ms=10000)
+service = ReverseSearch(license_key, is_live, timeout_ms=10000)
 response = service.reverse_search(
-    latitude="40.6892",
-    longitude="-74.0445",
-    search_radius="5",
-    country="USA",
-    max_results="2",
-    search_type="All",
+    latitude,
+    longitude,
+    search_radius,
+    country,
+    max_results,
+    search_type,
 )
 
 # 3. Inspect results.

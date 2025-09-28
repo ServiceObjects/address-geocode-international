@@ -34,7 +34,7 @@ var response = client.InvokeAsync(
     Country: "US",
     Boundaries: "",
     MaxResults: "5",
-    SearchType: "Locality", // or "All", "Place", etc.
+    SearchType: "Locality",
     Extras: "",
     LicenseKey: "YOUR_LICENSE_KEY"
 ).GetAwaiter().GetResult();

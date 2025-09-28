@@ -5,7 +5,7 @@ sys.path.insert(0, os.path.abspath("../address-geocode-international-python/REST
 
 from reverse_search_rest import reverse_search
 
-def reverse_search_rest_sdk_go(license, is_live_key):
+def reverse_search_rest_sdk_go(license_key, is_live):
     print("\n" + "-" * 56)
     print("Address Geocode International - ReverseSearch - REST SDK")
     print("-" * 56)
@@ -17,8 +17,8 @@ def reverse_search_rest_sdk_go(license, is_live_key):
     print(f"Country      : USA")
     print(f"MaxResults   : 2")
     print(f"Search Type  : All")
-    print(f"Is Live      : {is_live_key}")
-    print(f"LicenseKey   : {license}")
+    print(f"Is Live      : {is_live}")
+    print(f"LicenseKey   : {license_key}")
 
     try:
         response = reverse_search(
@@ -28,8 +28,8 @@ def reverse_search_rest_sdk_go(license, is_live_key):
             country="USA",
             max_results="2",
             search_type="All",
-            license_key=license,
-            is_live=is_live_key
+            license_key=license_key,
+            is_live=is_live
         )
 
         if not response.get('Error'):

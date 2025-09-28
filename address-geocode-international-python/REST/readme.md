@@ -19,46 +19,61 @@ Find coordinates and information for a place, address, or POI (Point of Interest
 ```
 # 1. Build the input.
 #
-# Required fields:
-#              license
-#              is_live_key
-#
-# Optional fields:
-#              single_line
-#              address1 
-#              address2
-#              address3
-#              address4 
-#              address5
-#              locality 
-#              administrative_area
-#              postal_code
-#              country
-#              boundaries
-#              max_esults
-#              search_type
-#              extras
+# Fields:
+#     single_line
+#     address1 
+#     address2
+#     address3
+#     address4 
+#     address5
+#     locality 
+#     administrative_area
+#     postal_code
+#     country
+#     boundaries
+#     max_esults
+#     search_type
+#     extras
+#     license_key
+#     is_live
 
 from place_search_rest import place_search
 
+single_line = "17 Battery Place, New York, NY 10004"
+address1 = ""
+address2 = ""
+address3 = ""
+address4 = ""
+address5 = ""
+locality = ""
+administrative_area = ""
+postal_code = ""
+country = "USA"
+boundaries = ""
+max_results = ""
+search_type = ""
+extras = ""
+is_live = True
+license_key = "YOUR LICENSE KEY"
+
 # 2. Call the search method.
 response = place_search(
-    single_line="17 Battery Place, New York, NY 10004",
-    address1="",
-    address2="",
-    address3="",
-    address4="",
-    address5="",
-    locality="",
-    administrative_area="",
-    postal_code="",
-    country="USA",
-    boundaries="",
-    max_results="",
-    search_type="",
-    extras="",
-    license_key=license,
-    is_live=True
+    single_line,
+    address1,
+    address2,
+    address3,
+    address4,
+    address5,
+    locality,
+    administrative_area,
+    postal_code,
+    country,
+    boundaries,
+    max_results,
+    search_type,
+    extras,
+    license_key,
+    is_live
 )
 
 # 3. Inspect results.
@@ -138,30 +153,37 @@ Retrieve address/location information for a given latitude and longitude anywher
 ```
 # 1. Input.
 #
-# Required fields:
-#               license
-#               is_live_key
-#
-# Optional fields:
-#               latitude     
-#               longitude    
-#               search_radius
-#               country      
-#               max_results   
-#               search_type  
+# Fields:
+#    latitude     
+#    longitude    
+#    search_radius
+#    country      
+#    max_results   
+#    search_type  
+#    license_key
+#    is_live
 
 from reverse_search_rest import reverse_search
 
+latitude = "40.6892"
+longitude = "-74.0445"
+search_radius = "5"
+country = "USA"
+max_results = "2"
+search_type = "All"
+is_live = True
+license_key = "YOUR LICENSE KEY"
+
 # 2. Call the reverse geocoding method.
 response = reverse_search(
-    latitude="40.6892",
-    longitude="-74.0445",
-    search_radius="5",
-    country="USA",
-    max_results="2",
-    search_type="All",
-    license_key=license,
-    is_live=True
+    latitude,
+    longitude,
+    search_radius,
+    country,
+    max_results,
+    search_type,
+    license_key,
+    is_live
 )
 
 # 3. Inspect results.
