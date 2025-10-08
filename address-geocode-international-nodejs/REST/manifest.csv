@@ -1,0 +1,5 @@
+Filename,RawURL
+agi_response.js,https://raw.githubusercontent.com/ServiceObjects/address-geocode-international/refs/heads/master/address-geocode-international-nodejs/REST/agi_response.js
+place_search_rest.js,https://raw.githubusercontent.com/ServiceObjects/address-geocode-international/refs/heads/master/address-geocode-international-nodejs/REST/place_search_rest.js
+readme.md,https://raw.githubusercontent.com/ServiceObjects/address-geocode-international/refs/heads/master/address-geocode-international-nodejs/REST/readme.md
+reverse_search_rest.js,https://raw.githubusercontent.com/ServiceObjects/address-geocode-international/refs/heads/master/address-geocode-international-nodejs/REST/reverse_search_rest.js
